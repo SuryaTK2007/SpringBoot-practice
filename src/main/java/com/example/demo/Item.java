@@ -1,9 +1,11 @@
 package com.example.demo;
-//import org.springframework.stereotype.Indexed;
-//import jakarta.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotBlank;
 
 @Entity
@@ -14,6 +16,10 @@ public class Item {
 
     @NotBlank
     private String description;
+
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JsonIgnore
+    private User user;
 
     public Item(){
     }
@@ -31,5 +37,11 @@ public class Item {
     } 
     public void setDescription(String description){
         this.description=description;
+    }
+    public User getUser(){
+        return user;
+    }
+    public void setUser(User user){
+        this.user=user;
     }
 }

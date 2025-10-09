@@ -1,0 +1,9 @@
+What are Daemons? 
+The Gradle Daemon is a background process that makes your future builds much faster. Think of it like keeping a car engine warm on a cold day. 
+The first time you start it (./gradlew bootRun), Gradle kicks off this daemon process. The next time you run a command, the daemon is already 
+warm and waiting, so your project builds and runs much faster. It's a performance feature, so seeing it is a good thing.
+
+JPA H2 database:
+The H2 database is perfect for learning because it requires zero installation or setup. It runs inside your application and resets every time you
+restart, which is great for development and testing.
+
